@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<h1>Üzenet küldése</h1>
+<form action="#" th:action="@{/reg_uzenet}" th:object="${content}" method="post">
+  <p>Üzenet: <input type="text" th:field="*{content}"/></p>
+  <p><input type="submit" value="Küldés" /></p>
+</form>
+<div th:insert="footer"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px 50px 10px 5px;
+            text-align: left;
+            font-family: sans-serif;
+            font-size: x-small;
+        }
+        th {
+            color: #1E459E;
+            background-color: #B9C9FE;
+            border-top: 5px solid #AABCFE;
+        }
+        td {
+            color: #7274A5;
+            background-color: #D0DAFD;
+            border-top: 3px solid #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="header"></div>
+<div th:insert="menu"></div>
+<div>
+    <h1>Üzenetek lekérése</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Üzenet</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="content : ${uzenetek}">
+            <td th:text="${content.id}"></td>
+            <td th:text="${content.content}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:insert="footer"></div>
+</body>
+</html>
